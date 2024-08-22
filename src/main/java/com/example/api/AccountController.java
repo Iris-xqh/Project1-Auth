@@ -18,7 +18,7 @@ public class AccountController {
     RegisterService registerService;
 
     @GetMapping("/token")
-    public String generateJWT(@RequestParam String name, @RequestParam String password) {
+    public String generateJWT(@RequestParam("name") String name, @RequestParam("password") String password) {
         return tokenService.generateTokenForClient(name, password);
     }
 

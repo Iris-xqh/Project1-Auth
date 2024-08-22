@@ -23,7 +23,7 @@ public class RegisterService {
 
     public ResponseEntity<?> register(Customer customer) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/api/customers";
+        String url = "http://cusapp:8080/api/customers";
         String accessToken = "Bearer " + tokenService.generateToken("authServer");
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set(HttpHeaders.AUTHORIZATION,  accessToken);

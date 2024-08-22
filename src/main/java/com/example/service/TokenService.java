@@ -29,8 +29,9 @@ public class TokenService {
     public Customer getCustomerFromCustomerAPI(String username) {
         String customerStr = "";
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/api/customers/getbyname/" + username;
-        String accessToken = "Bearer " + generateToken("authServer");
+       // String url = "http://localhost:8080/api/customers/getbyname/" + username;
+       String url = "http://cusapp:8080/api/customers/getbyname/" + username; 
+       String accessToken = "Bearer " + generateToken("authServer");
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set(HttpHeaders.AUTHORIZATION,  accessToken);
         HttpEntity<String> httpEntity = new HttpEntity<>(null, httpHeaders);
@@ -42,7 +43,7 @@ public class TokenService {
                 customerStr = responseEntity.getBody();
             }
         }catch (Exception e) {
-            System.out.println("GET API Error: " + e.getMessage());
+            System.out.println("GETeee API Error: " + e.getMessage());
         }
 
         //String customerStr = restTemplate.getForObject(url, String.class);
