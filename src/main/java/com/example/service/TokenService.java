@@ -63,7 +63,7 @@ public class TokenService {
         return true;
     }
 
-    private String generateToken(String username) {
+    public String generateToken(String username) {
         if (username == null || username.isEmpty()) {
             throw new IllegalArgumentException("Username cannot be null when generating token");
         }
